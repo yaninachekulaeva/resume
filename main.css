@@ -39,19 +39,17 @@ body {
     font-size: 0.9em;
     color: #777;
   }
-  .download-btn {
-    display: inline-block;
-
-    padding: 10px 20px;
-    background-color: var(--primary-color);
-    color: #333;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    text-decoration: none;
-  }
-
-  .download-btn:hover {
+  .download-button {
     background-color: #0077cc;
+    margin-top: 20px;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .download-button:hover {
+    background-color: #005fa3;
   }

@@ -10,6 +10,8 @@
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
         <link rel="icon" href="./img/icon.png" type="image/png">
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     </head>
     <body>
         <div class="container">
@@ -46,8 +48,8 @@
                             </a>
                         </p>
                     </section>
-                    <a class="download-btn" href="#"
-                        onclick="window.print()" title="Download PDF"><i
+                    <br>
+                    <a class="download-button" id="download-pdf" title="Download PDF"><i
                             class="fas fa-file-download"></i><strong> Download
                             as PDF</strong></a>
                 </div>
@@ -217,6 +219,19 @@
             <hr>
             <p>© 2025 Yanina Chekulaeva. All rights reserved.</p>
         </footer>
-
+        <script>
+            document.getElementById("download-pdf").addEventListener("click", () => {
+              const element = document.body; // Або: document.getElementById("resume")
+              const opt = {
+                margin:       0.5,
+                filename:     'Yanina-Chekulaeva-Resume.pdf',
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { scale: 2 },
+                jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
+              };
+          
+              html2pdf().set(opt).from(element).save();
+            });
+          </script>
     </body>
 </html>
