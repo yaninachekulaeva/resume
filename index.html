@@ -49,7 +49,8 @@
                         </p>
                     </section>
                     <br>
-                    <a class="download-button" id="download-pdf" title="Download PDF"><i
+                    <a class="download-button" id="download-pdf"
+                        title="Download PDF"><i
                             class="fas fa-file-download"></i><strong> Download
                             as PDF</strong></a>
                 </div>
@@ -176,7 +177,8 @@
                     <h3>Test Management & Bug Tracking</h3>
                     <ul>
                         <li>Bug tracking: JIRA</li>
-                        <li>Test case management: Zephyr (JIRA), Zephyr Enterprise, Spira</li>
+                        <li>Test case management: Zephyr (JIRA), Zephyr
+                            Enterprise, Spira</li>
                     </ul>
                 </div>
                 <div>
@@ -221,23 +223,25 @@
             <p>© 2025 Yanina Chekulaeva. All rights reserved.</p>
         </footer>
         <script>
-            document.getElementById("download-pdf").addEventListener("click", () => {
-              const btn = document.getElementById("download-pdf");
-              btn.classList.add("no-print"); 
+            document.addEventListener("DOMContentLoaded", function () {
+                document.getElementById("download-pdf").addEventListener("click", () => {
+                const btn = document.getElementById("download-pdf");
+                btn.classList.add("no-print"); 
           
-              const element = document.getElementsByTagName("body");
-              const opt = {
-                margin:       0.5,
-                filename:     'Yanina-Chekulaeva-Resume.pdf',
-                image:        { type: 'jpeg', quality: 0.98 },
-                html2canvas:  { scale: 2 },
-                jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
+                const element = document.getElementsByTagName("body");
+                const opt = {
+                    margin:       0.5,
+                    filename:     'Yanina-Chekulaeva-Resume.pdf',
+                    image:        { type: 'jpeg', quality: 0.98 },
+                    html2canvas:  { scale: 2 },
+                    jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
               };
           
-              html2pdf().set(opt).from(element).save().then(() => {
+                html2pdf().set(opt).from(element).save().then(() => {
                 btn.classList.remove("no-print");
               });
             });
+        });
           </script>
     </body>
 </html>
