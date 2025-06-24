@@ -49,7 +49,9 @@ body {
     border-radius: 6px;
     cursor: pointer;
   }
-  
   .download-button:hover {
     background-color: #005fa3;
+  }
+  .no-print {
+    display: none;
   }

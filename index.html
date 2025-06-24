@@ -68,13 +68,6 @@
             </ul>
             <hr>
 
-            <h2><i class="fas fa-graduation-cap section-icon"></i>Education</h2>
-
-            <h3>Computer Science - Intelligent Systems of Making Decisions</h3>
-            <h4>Petro Mohyla Black Sea State University - Master's Degree</h4>
-            <p><em>2005 — 2011</em></p>
-            <hr>
-
             <h2><i class="fas fa-briefcase section-icon"></i>Work
                 Experience</h2>
             <h3>QA Automation Team Lead</h3>
@@ -183,14 +176,14 @@
                     <h3>Test Management & Bug Tracking</h3>
                     <ul>
                         <li>Bug tracking: JIRA</li>
-                        <li>Test case management: Zephyr (JIRA), Spira</li>
+                        <li>Test case management: Zephyr (JIRA), Zephyr Enterprise, Spira</li>
                     </ul>
                 </div>
                 <div>
 
                     <h3>Monitoring & Analytics</h3>
                     <ul>
-                        <li>InfluxDB, Grafana, Power BI</li>
+                        <li>Grafana, InfluxDB, Power BI</li>
                     </ul>
                 </div>
                 <div>
@@ -201,6 +194,14 @@
                     </ul>
                 </div>
             </div>
+            <hr>
+
+            <h2><i class="fas fa-graduation-cap section-icon"></i>Education</h2>
+
+            <h3>Computer Science - Intelligent Systems of Making Decisions</h3>
+            <h4>Petro Mohyla Black Sea State University - Master's Degree</h4>
+            <p><em>2005 — 2011</em></p>
+            <hr>
 
             <h2>Languages</h2>
             <ul>
@@ -221,7 +222,10 @@
         </footer>
         <script>
             document.getElementById("download-pdf").addEventListener("click", () => {
-              const element = document.body; // Або: document.getElementById("resume")
+              const btn = document.getElementById("download-pdf");
+              btn.classList.add("no-print"); 
+          
+              const element = document.getElementById("resume");
               const opt = {
                 margin:       0.5,
                 filename:     'Yanina-Chekulaeva-Resume.pdf',
@@ -230,7 +234,9 @@
                 jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
               };
           
-              html2pdf().set(opt).from(element).save();
+              html2pdf().set(opt).from(element).save().then(() => {
+                btn.classList.remove("no-print");
+              });
             });
           </script>
     </body>
